@@ -1,6 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "My first Hexlet project",
   "main": "index.js",
   "scripts": {
