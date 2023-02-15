@@ -8,18 +8,27 @@ const brainEven = () => {
 
   // task run
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  const randomInt = Math.ceil(Math.random() * 100);
-  console.log(`Question: ${randomInt}`);
-  const userAnswer = readlineSync.question('Your answer: ');
 
-  // parity check
-  if (randomInt % 2 === 0) {
-    if (userAnswer === 'no') {
-      console.log('Correct!');
+  // answers counter
+  let i = 0;
+  while (i < 3) {
+    const randomInt = Math.ceil(Math.random() * 100);
+    console.log(`Question: ${randomInt}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    // parity check
+    if (randomInt % 2 === 0) {
+      if (userAnswer === 'yes') {
+        console.log('Correct!');
+      } else {
+        console.log(
+          `'${userAnswer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`,
+        );
+        return;
+      }
     }
-    console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`,
-    );
+
+    i += 1;
   }
 };
 
