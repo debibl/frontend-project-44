@@ -27,6 +27,11 @@ const brainEven = () => {
       return;
     }
   }
+
+  // congratulations on winning
+  if (answersCount === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
 };
 
 export default brainEven;
