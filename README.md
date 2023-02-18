@@ -25,6 +25,4 @@ or
 make brain-even
 ```
 
-Video tutorial:
-
 <a href="https://asciinema.org/a/Ig1Eue4Ur46pFEJZQ82QVfKyp" target="_blank"><img src="https://asciinema.org/a/Ig1Eue4Ur46pFEJZQ82QVfKyp.svg" /></a>
