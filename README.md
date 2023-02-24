@@ -17,10 +17,13 @@ make install
 You need to answer "yes" if the number is even, otherwise answer "no"
 
 To run the game:
+
 ```bash
 brain-even
 ```
+
 or
+
 ```bash
 make brain-even
 ```
