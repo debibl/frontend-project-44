@@ -1,11 +1,9 @@
 import readlineSync from 'readline-sync';
+import { greeting, congratulations, condolences } from '../index.js';
 
 const brainEven = () => {
   // welcome message
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hi, ${userName}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  const userName = greeting();
 
   // answers counter
   let answersCount = 0;
@@ -21,16 +19,14 @@ const brainEven = () => {
       console.log('Correct!');
       answersCount += 1;
     } else {
-      console.log(
-        `"${userAnswer}" is the wrong answer ;(. The correct answer was "${rightAnswer}".\nLet's try again, ${userName}!`,
-      );
+      condolences(userAnswer, rightAnswer, userName);
       return;
     }
   }
 
   // congratulations on winning
   if (answersCount === 3) {
-    console.log(`Congratulations, ${userName}!`);
+    congratulations(userName);
   }
 };
 
