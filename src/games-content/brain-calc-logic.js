@@ -7,11 +7,14 @@ import {
 } from '../index.js';
 
 const brainCalc = () => {
+  // welcome message
   const userName = greeting();
   console.log('What is the result of this expression?');
 
+  // answers counter
   let answersCount = 0;
   while (answersCount < 3) {
+    // task run
     const randomExpression = randomExpressionGenerator();
     console.log(`Question: ${randomExpression}`);
     const userAnswer = readlineSync.question('Your answer: ');

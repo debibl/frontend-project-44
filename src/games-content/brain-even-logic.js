@@ -8,6 +8,7 @@ const brainEven = () => {
   // answers counter
   let answersCount = 0;
   while (answersCount < 3) {
+    // task run
     const randomInt = Math.ceil(Math.random() * 100);
     console.log(`Question: ${randomInt}`);
     const userAnswer = readlineSync.question('Your answer: ');
@@ -15,6 +16,7 @@ const brainEven = () => {
     // answer check
     const isEven = (num) => num % 2 === 0;
     const rightAnswer = isEven(randomInt) ? 'yes' : 'no';
+
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
       answersCount += 1;
