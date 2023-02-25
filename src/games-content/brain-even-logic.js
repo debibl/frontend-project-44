@@ -1,6 +1,9 @@
 import readlineSync from 'readline-sync';
 import {
-  greeting, congratulations, condolences, randomIntGenerator,
+  greeting,
+  congratulations,
+  condolences,
+  randomIntGenerator,
 } from '../index.js';
 
 const brainEven = () => {
