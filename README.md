@@ -12,7 +12,7 @@ make install
 
 ## How to start games:
 
-### Brain-even game
+### Brain-even
 
 You need to answer "yes" if the number is even, otherwise answer "no"
 
@@ -28,4 +28,22 @@ or
 make brain-even
 ```
 
-<a href="https://asciinema.org/a/Ig1Eue4Ur46pFEJZQ82QVfKyp" target="_blank"><img src="https://asciinema.org/a/Ig1Eue4Ur46pFEJZQ82QVfKyp.svg" /></a>
+<a href="https://asciinema.org/a/562722" target="_blank"><img src="https://asciinema.org/a/562722.svg" /></a>
+
+### Brain-calc
+
+You need to calculate an expression and enter the result
+
+To run the game:
+
+```bash
+brain-calc
+```
+
+or
+
+```bash
+make brain-calc
+```
+
+<a href="https://asciinema.org/a/562720" target="_blank"><img src="https://asciinema.org/a/562720.svg" /></a>
