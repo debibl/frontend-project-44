@@ -3,7 +3,8 @@ import {
   greeting,
   congratulations,
   condolences,
-  randomExpressionGenerator,
+  randomOperatorGenerator,
+  randomIntGenerator,
 } from '../index.js';
 
 const brainCalc = () => {
@@ -15,14 +16,31 @@ const brainCalc = () => {
   let answersCount = 0;
   while (answersCount < 3) {
     // task run
-    const randomExpression = randomExpressionGenerator();
-    console.log(`Question: ${randomExpression}`);
+    const operator = randomOperatorGenerator();
+    const num1 = randomIntGenerator(10);
+    const num2 = randomIntGenerator(10);
+    console.log(`Question: ${num1} ${operator} ${num2}`);
+
+    const answer = () => {
+      let result;
+      switch (operator) {
+        case '+':
+          result = num1 + num2;
+          break;
+        case '-':
+          result = num1 - num2;
+          break;
+        default:
+          result = num1 * num2;
+          break;
+      }
+      return `${result}`;
+    };
+
+    const rightAnswer = answer();
     const userAnswer = readlineSync.question('Your answer: ');
 
     // answer check
-    // eslint-disable-next-line no-eval
-    const rightAnswer = String(eval(randomExpression));
-
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
       answersCount += 1;

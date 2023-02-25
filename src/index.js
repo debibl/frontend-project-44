@@ -12,13 +12,11 @@ export const randomIntGenerator = (range) => {
   return number;
 };
 
-export const randomExpressionGenerator = () => {
-  const num1 = randomIntGenerator(10);
-  const num2 = randomIntGenerator(10);
+export const randomOperatorGenerator = () => {
   const operators = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * operators.length);
   const operator = operators[randomIndex];
-  return `${num1} ${operator} ${num2}`;
+  return operator;
 };
 
 export const condolences = (userAnswer, rightAnswer, userName) => {
