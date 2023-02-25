@@ -7,14 +7,14 @@ export const greeting = () => {
   return userName;
 };
 
-export const randomIntGenerator = () => {
-  const number = Math.ceil(Math.random() * 100);
+export const randomIntGenerator = (range) => {
+  const number = Math.ceil(Math.random() * range);
   return number;
 };
 
 export const randomExpressionGenerator = () => {
-  const num1 = randomIntGenerator();
-  const num2 = randomIntGenerator();
+  const num1 = randomIntGenerator(10);
+  const num2 = randomIntGenerator(10);
   const operators = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * operators.length);
   const operator = operators[randomIndex];
