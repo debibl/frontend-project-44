@@ -1,15 +1,18 @@
 import readlineSync from 'readline-sync';
-import { greeting, congratulations, condolences } from '../index.js';
+import {
+  greeting, congratulations, condolences, randomIntGenerator,
+} from '../index.js';
 
 const brainEven = () => {
   // welcome message
   const userName = greeting();
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   // answers counter
   let answersCount = 0;
   while (answersCount < 3) {
     // task run
-    const randomInt = Math.ceil(Math.random() * 100);
+    const randomInt = randomIntGenerator(100);
     console.log(`Question: ${randomInt}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
