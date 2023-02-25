@@ -33,9 +33,7 @@ const brainEven = () => {
   }
 
   // congratulations on winning
-  if (answersCount === 3) {
-    congratulations(userName);
-  }
+  congratulations(userName, answersCount);
 };
 
 export default brainEven;

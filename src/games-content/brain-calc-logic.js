@@ -5,6 +5,7 @@ import {
   condolences,
   randomOperatorGenerator,
   randomIntGenerator,
+  answer,
 } from '../index.js';
 
 const brainCalc = () => {
@@ -21,23 +22,7 @@ const brainCalc = () => {
     const num2 = randomIntGenerator(10);
     console.log(`Question: ${num1} ${operator} ${num2}`);
 
-    const answer = () => {
-      let result;
-      switch (operator) {
-        case '+':
-          result = num1 + num2;
-          break;
-        case '-':
-          result = num1 - num2;
-          break;
-        default:
-          result = num1 * num2;
-          break;
-      }
-      return `${result}`;
-    };
-
-    const rightAnswer = answer();
+    const rightAnswer = answer(operator, num1, num2);
     const userAnswer = readlineSync.question('Your answer: ');
 
     // answer check
@@ -50,9 +35,7 @@ const brainCalc = () => {
     }
 
     // congratulations on winning
-    if (answersCount === 3) {
-      congratulations(userName);
-    }
+    congratulations(userName, answersCount);
   }
 };
 
