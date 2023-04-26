@@ -50,7 +50,7 @@ make brain-calc
 
 ### Brain-GCD
 
-You need find the greatest common divisor of given numbers.
+You need to find the greatest common divisor of given numbers.
 
 To run the game:
 
