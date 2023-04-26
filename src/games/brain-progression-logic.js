@@ -3,24 +3,22 @@ import {
   greeting,
   congratulations,
   condolences,
-  randomIntGenerator,
-  findGCD,
+  randomProgressionGenerator,
 } from '../index.js';
 
-const brainGCD = () => {
+const brainProgression = () => {
   // welcome message
   const userName = greeting();
-  console.log('Find the greatest common divisor of given numbers.');
+  console.log('What is the missing number in the progression?');
 
   // answers counter
   let answersCount = 0;
   while (answersCount < 3) {
     // task run
-    const num1 = randomIntGenerator(100);
-    const num2 = randomIntGenerator(100);
-    console.log(`Question: ${num1} ${num2}`);
+    const question = randomProgressionGenerator(10);
+    console.log(`Question: ${question.progression.join(' ')}`);
 
-    const rightAnswer = `${findGCD(num1, num2)}`;
+    const rightAnswer = `${question.hiddenNumber}`;
     const userAnswer = readlineSync.question('Your answer: ');
 
     // answer check
@@ -37,4 +35,4 @@ const brainGCD = () => {
   }
 };
 
-export default brainGCD;
+export default brainProgression;

@@ -65,3 +65,21 @@ make brain-gcd
 ```
 
 <a href="https://asciinema.org/a/580827" target="_blank"><img src="https://asciinema.org/a/580827.svg" /></a>
+
+### Brain-progression
+
+You need to find the missing number in the progression.
+
+To run the game:
+
+```bash
+brain-progression
+```
+
+or
+
+```bash
+make brain-progression
+```
+
+<a href="https://asciinema.org/a/580831" target="_blank"><img src="https://asciinema.org/a/580831.svg" /></a>

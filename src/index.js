@@ -12,6 +12,18 @@ export const randomIntGenerator = (range) => {
   return number;
 };
 
+export const randomProgressionGenerator = (length) => {
+  const num = Math.floor(Math.random() * length + 1);
+  const randomIndex = Math.floor(Math.random() * length + 1);
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(num * i);
+  }
+  const hiddenNum = progression.at(randomIndex);
+  progression[randomIndex] = '..';
+  return { progression, hiddenNumber: hiddenNum };
+};
+
 export const randomOperatorGenerator = () => {
   const operators = ['+', '-', '*'];
   const randomIndex = Math.floor(Math.random() * operators.length);
