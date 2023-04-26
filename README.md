@@ -47,3 +47,21 @@ make brain-calc
 ```
 
 <a href="https://asciinema.org/a/562720" target="_blank"><img src="https://asciinema.org/a/562720.svg" /></a>
+
+### Brain-GCD
+
+You need find the greatest common divisor of given numbers.
+
+To run the game:
+
+```bash
+brain-gcd
+```
+
+or
+
+```bash
+make brain-gcd
+```
+
+<a href="https://asciinema.org/a/580827" target="_blank"><img src="https://asciinema.org/a/580827.svg" /></a>
