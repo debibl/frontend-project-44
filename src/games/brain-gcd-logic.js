@@ -3,26 +3,24 @@ import {
   greeting,
   congratulations,
   condolences,
-  randomOperatorGenerator,
   randomIntGenerator,
-  calcAnswer,
+  findGCD,
 } from '../index.js';
 
-const brainCalc = () => {
+const brainGCD = () => {
   // welcome message
   const userName = greeting();
-  console.log('What is the result of this expression?');
+  console.log('Find the greatest common divisor of given numbers.');
 
   // answers counter
   let answersCount = 0;
   while (answersCount < 3) {
     // task run
-    const operator = randomOperatorGenerator();
-    const num1 = randomIntGenerator(10);
-    const num2 = randomIntGenerator(10);
-    console.log(`Question: ${num1} ${operator} ${num2}`);
+    const num1 = randomIntGenerator(100);
+    const num2 = randomIntGenerator(100);
+    console.log(`Question: ${num1} ${num2}`);
 
-    const rightAnswer = calcAnswer(operator, num1, num2);
+    const rightAnswer = String(findGCD(num1, num2));
     const userAnswer = readlineSync.question('Your answer: ');
 
     // answer check
@@ -39,4 +37,4 @@ const brainCalc = () => {
   }
 };
 
-export default brainCalc;
+export default brainGCD;

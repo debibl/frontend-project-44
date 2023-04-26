@@ -19,7 +19,18 @@ export const randomOperatorGenerator = () => {
   return operator;
 };
 
-export const answer = (operator, num1, num2) => {
+export const findGCD = (num1, num2) => {
+  const smaller = Math.min(num1, num2);
+  let divisor = smaller;
+  for (divisor; divisor > 0; divisor -= 1) {
+    if (num1 % divisor === 0 && num2 % divisor === 0) {
+      return divisor;
+    }
+  }
+  return divisor;
+};
+
+export const calcAnswer = (operator, num1, num2) => {
   let result;
   switch (operator) {
     case '+':
