@@ -100,7 +100,7 @@ const prime = () => {
   const maxNumber = 100;
   const randomInt = randomIntGenerator(maxNumber);
   const task = `${randomInt}`;
-  const isPrime = (num) => (num % 2 !== 0) && (num % 4 !== 0);
+  const isPrime = (num) => num % 2 !== 0 && num % 4 !== 0;
   const rightAnswer = isPrime(randomInt) ? 'yes' : 'no';
   return { task, rightAnswer };
 };
