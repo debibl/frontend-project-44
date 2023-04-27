@@ -51,21 +51,63 @@ export const calcAnswer = (operator, num1, num2) => {
     case '-':
       result = num1 - num2;
       break;
-    default:
+    case '*':
       result = num1 * num2;
       break;
+    default:
+      return undefined;
   }
   return `${result}`;
 };
 
-export const condolences = (userAnswer, rightAnswer, userName) => {
-  console.log(
-    `"${userAnswer}" is a wrong answer ;(. The correct answer was "${rightAnswer}".\nLet's try again, ${userName}!`,
-  );
+export const makeTask = (gameType) => {
+  let task;
+  let rightAnswer;
+
+  if (gameType === 'progression') {
+    const assignment = randomProgressionGenerator(10);
+    task = assignment.progression.join(' ');
+    rightAnswer = `${assignment.hiddenNumber}`;
+  } else if (gameType === 'GCD') {
+    const num1 = randomIntGenerator(100);
+    const num2 = randomIntGenerator(100);
+    task = `${num1} ${num2}`;
+    rightAnswer = `${findGCD(num1, num2)}`;
+  } else if (gameType === 'even-odd') {
+    const randomInt = randomIntGenerator(100);
+    task = `${randomInt}`;
+    const isEven = (num) => num % 2 === 0;
+    rightAnswer = isEven(randomInt) ? 'yes' : 'no';
+  } else if (gameType === 'calc') {
+    const operator = randomOperatorGenerator();
+    const num1 = randomIntGenerator(10);
+    const num2 = randomIntGenerator(10);
+    task = `${num1} ${operator} ${num2}`;
+    rightAnswer = calcAnswer(operator, num1, num2);
+  }
+
+  return { task, rightAnswer };
 };
 
-export const congratulations = (userName, answersCount) => {
-  if (answersCount === 3) {
-    console.log(`Congratulations, ${userName}!`);
+export const answerCheck = (userName, gameType) => {
+  let answersCount = 0;
+  while (answersCount < 3) {
+    const game = makeTask(gameType);
+    console.log(`Question: ${game.task}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer === game.rightAnswer) {
+      console.log('Correct!');
+      answersCount += 1;
+    } else {
+      console.log(
+        `"${userAnswer}" is a wrong answer ;(. The correct answer was "${game.rightAnswer}".\nLet's try again, ${userName}!`,
+      );
+      return;
+    }
+
+    if (answersCount === 3) {
+      console.log(`Congratulations, ${userName}!`);
+    }
   }
 };
