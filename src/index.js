@@ -100,8 +100,12 @@ const prime = () => {
   const maxNumber = 100;
   const randomInt = randomIntGenerator(maxNumber);
   const task = `${randomInt}`;
-  const isPrime = (num) => num % 2 !== 0 && num % 4 !== 0;
-  const rightAnswer = isPrime(randomInt) ? 'yes' : 'no';
+  const primeNumbers = [
+    1, 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37,
+    41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97,
+  ];
+  const isPrime = primeNumbers.includes(randomInt);
+  const rightAnswer = isPrime ? 'yes' : 'no';
   return { task, rightAnswer };
 };
 
