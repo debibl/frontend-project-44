@@ -142,5 +142,7 @@ export default (gameType, question) => {
       break;
     }
   }
-  return console.log(`Congratulations, ${userName}!`);
+  if (answersCount === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
 };
