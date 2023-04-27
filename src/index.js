@@ -137,7 +137,7 @@ export default (gameType, question) => {
       answersCount += 1;
     } else {
       console.log(
-        `"${userAnswer}" is a wrong answer ;(. The correct answer was "${game.rightAnswer}".\nLet's try again, ${userName}!`,
+        `"${userAnswer}" is wrong answer ;(. Correct answer was "${game.rightAnswer}".\nLet's try again, ${userName}!`,
       );
       break;
     }
