@@ -1,15 +1,10 @@
-import {
-  greeting,
-  answerCheck,
-} from '../index.js';
+import gameEngine from '../index.js';
 
 const brainEven = () => {
   const gameType = 'even-odd';
+  const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const userName = greeting();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  answerCheck(userName, gameType);
+  gameEngine(gameType, question);
 };
 
 export default brainEven;

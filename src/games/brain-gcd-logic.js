@@ -1,15 +1,10 @@
-import {
-  greeting,
-  answerCheck,
-} from '../index.js';
+import gameEngine from '../index.js';
 
 const brainGCD = () => {
   const gameType = 'GCD';
+  const question = 'Find the greatest common divisor of given numbers.';
 
-  const userName = greeting();
-  console.log('Find the greatest common divisor of given numbers.');
-
-  answerCheck(userName, gameType);
+  gameEngine(gameType, question);
 };
 
 export default brainGCD;

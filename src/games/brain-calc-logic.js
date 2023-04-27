@@ -1,15 +1,10 @@
-import {
-  greeting,
-  answerCheck,
-} from '../index.js';
+import gameEngine from '../index.js';
 
 const brainCalc = () => {
   const gameType = 'calc';
+  const question = 'What is the result of this expression?';
 
-  const userName = greeting();
-  console.log('What is the result of this expression?');
-
-  answerCheck(userName, gameType);
+  gameEngine(gameType, question);
 };
 
 export default brainCalc;

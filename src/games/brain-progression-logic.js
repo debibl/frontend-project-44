@@ -1,15 +1,10 @@
-import {
-  greeting,
-  answerCheck,
-} from '../index.js';
+import gameEngine from '../index.js';
 
 const brainProgression = () => {
   const gameType = 'progression';
+  const question = ('What is the missing number in the progression?');
 
-  const userName = greeting();
-  console.log('What is the missing number in the progression?');
-
-  answerCheck(userName, gameType);
+  gameEngine(gameType, question);
 };
 
 export default brainProgression;
