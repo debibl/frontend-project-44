@@ -83,3 +83,21 @@ make brain-progression
 ```
 
 <a href="https://asciinema.org/a/580831" target="_blank"><img src="https://asciinema.org/a/580831.svg" /></a>
+
+### Brain-prime
+
+Answer "yes" if the number is prime, otherwise answer "no".
+
+To run the game:
+
+```bash
+brain-prime
+```
+
+or
+
+```bash
+make brain-prime
+```
+
+<a href="https://asciinema.org/a/580851" target="_blank"><img src="https://asciinema.org/a/580851.svg" /></a>

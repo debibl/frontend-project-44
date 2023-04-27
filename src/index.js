@@ -84,6 +84,11 @@ export const makeTask = (gameType) => {
     const num2 = randomIntGenerator(10);
     task = `${num1} ${operator} ${num2}`;
     rightAnswer = calcAnswer(operator, num1, num2);
+  } else if (gameType === 'isPrime') {
+    const randomInt = randomIntGenerator(100);
+    task = `${randomInt}`;
+    const isPrime = (num) => (num % 2 !== 0) && (num % 4 !== 0);
+    rightAnswer = isPrime(randomInt) ? 'yes' : 'no';
   }
 
   return { task, rightAnswer };
