@@ -13,8 +13,8 @@ const randomIntGenerator = (range) => {
 };
 
 const randomProgressionGenerator = (length) => {
-  const num = Math.floor(Math.random() * length);
-  const randomIndex = Math.floor(Math.random() * length + 1);
+  const num = Math.round(Math.random() * length);
+  const randomIndex = Math.round(Math.random() * length);
   const progression = [];
   for (let i = 0; i < length; i += 1) {
     progression.push(num * i);
