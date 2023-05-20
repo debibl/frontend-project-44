@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import getRandomInt from './utils.js';
 
 const greeting = () => {
   console.log('Welcome to the Brain Games!');
@@ -7,27 +8,22 @@ const greeting = () => {
   return userName;
 };
 
-const randomIntGenerator = (range) => {
-  const number = Math.ceil(Math.random() * range);
-  return number;
-};
-
-const randomProgressionGenerator = (length) => {
+const getRandomProgression = (length) => {
   const num = Math.round(Math.random() * length);
   const randomIndex = Math.round(Math.random() * length);
   const progression = [];
   for (let i = 0; i < length; i += 1) {
     progression.push(num * i);
   }
-  const hiddenNum = progression.at(randomIndex);
+  const hiddenNumber = progression.at(randomIndex);
   progression[randomIndex] = '..';
-  return { progression, hiddenNumber: hiddenNum };
+  return { progression, hiddenNumber };
 };
 
-const randomOperatorGenerator = () => {
+const getRandomOperator = () => {
   const operators = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * operators.length);
-  const operator = operators[randomIndex];
+  const randomOperator = Math.floor(Math.random() * operators.length);
+  const operator = operators[randomOperator];
   return operator;
 };
 
@@ -62,7 +58,7 @@ const calcAnswer = (operator, num1, num2) => {
 
 const progression = () => {
   const progressionLength = 10;
-  const assignment = randomProgressionGenerator(progressionLength);
+  const assignment = getRandomProgression(progressionLength);
   const task = assignment.progression.join(' ');
   const rightAnswer = `${assignment.hiddenNumber}`;
   return { task, rightAnswer };
@@ -70,8 +66,8 @@ const progression = () => {
 
 const GCD = () => {
   const maxNumber = 100;
-  const num1 = randomIntGenerator(maxNumber);
-  const num2 = randomIntGenerator(maxNumber);
+  const num1 = getRandomInt(maxNumber);
+  const num2 = getRandomInt(maxNumber);
   const task = `${num1} ${num2}`;
   const rightAnswer = `${findGCD(num1, num2)}`;
   return { task, rightAnswer };
@@ -79,7 +75,7 @@ const GCD = () => {
 
 const evenOdd = () => {
   const maxNumber = 100;
-  const randomInt = randomIntGenerator(maxNumber);
+  const randomInt = getRandomInt(maxNumber);
   const task = `${randomInt}`;
   const isEven = (num) => num % 2 === 0;
   const rightAnswer = isEven(randomInt) ? 'yes' : 'no';
@@ -88,9 +84,9 @@ const evenOdd = () => {
 
 const calc = () => {
   const maxNumber = 10;
-  const operator = randomOperatorGenerator();
-  const num1 = randomIntGenerator(maxNumber);
-  const num2 = randomIntGenerator(maxNumber);
+  const operator = getRandomOperator();
+  const num1 = getRandomInt(maxNumber);
+  const num2 = getRandomInt(maxNumber);
   const task = `${num1} ${operator} ${num2}`;
   const rightAnswer = calcAnswer(operator, num1, num2);
   return { task, rightAnswer };
@@ -98,7 +94,7 @@ const calc = () => {
 
 const prime = () => {
   const maxNumber = 100;
-  const randomInt = randomIntGenerator(maxNumber);
+  const randomInt = getRandomInt(maxNumber);
   const task = `${randomInt}`;
   const primeNumbers = [
     2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41,
